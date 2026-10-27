@@ -5,9 +5,10 @@ import { App } from './app';
 import { MenuComponent } from './components/menu-component/menu-component';
 import { HomeComponent } from './components/home-component/home-component';
 import { ServiceDepartamento } from './services/serviceDepartamento';
+import { CreateComponent } from './components/create-component/create-component';
 
 @NgModule({
-  declarations: [App, MenuComponent, HomeComponent],
+  declarations: [App, MenuComponent, HomeComponent, CreateComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [provideBrowserGlobalErrorListeners(), ServiceDepartamento],
   bootstrap: [App],

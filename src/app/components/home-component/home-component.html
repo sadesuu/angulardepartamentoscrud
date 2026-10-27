@@ -1,1 +1,78 @@
-<p>home-component works!</p>
+<main class="dashboard" id="departamentos">
+    <section class="hero" id="resumen">
+        <div class="hero__copy">
+            <span class="eyebrow">Panel de organización</span>
+            <h1>Todos tus departamentos,<br><em>en un solo lugar.</em></h1>
+            <p>Consulta de un vistazo la información de cada área y mantén tu organización siempre clara.</p>
+        </div>
+        <div class="hero__shape" aria-hidden="true">
+            <span class="hero__shape-circle"></span>
+            <span class="hero__shape-line"></span>
+            <span class="hero__shape-number">01</span>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="section-heading">
+            <div>
+                <span class="eyebrow eyebrow--dark">Directorio</span>
+                <h2>Departamentos registrados</h2>
+            </div>
+            <div class="total-badge">
+                <strong>{{ departamentos?.length || 0 }}</strong>
+                <span>áreas activas</span>
+            </div>
+        </div>
+
+        <div class="table-container" *ngIf="departamentos as lista">
+            <table class="department-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Código</th>
+                        <th scope="col">Departamento</th>
+                        <th scope="col">Localidad</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col" class="actions-column">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let departamento of lista">
+                        <td data-label="Código">
+                            <span class="department-code">#{{ departamento.numero }}</span>
+                        </td>
+                        <td data-label="Departamento">
+                            <span class="department-name">{{ departamento.nombre }}</span>
+                        </td>
+                        <td data-label="Localidad">
+                            <span class="department-location">
+                                <span class="location-pin" aria-hidden="true">⌖</span>
+                                {{ departamento.localidad }}
+                            </span>
+                        </td>
+                        <td data-label="Estado">
+                            <span class="department-card__badge">Activo</span>
+                        </td>
+                        <td data-label="Acciones">
+                            <div class="table-actions">
+                                <button class="action-button action-button--edit" type="button" aria-label="Editar departamento">
+                                    <span aria-hidden="true">✎</span>
+                                    Editar
+                                </button>
+                                <button class="action-button action-button--delete" type="button" aria-label="Eliminar departamento">
+                                    <span aria-hidden="true">×</span>
+                                    Eliminar
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="empty-state" *ngIf="departamentos && departamentos.length === 0">
+            <span class="empty-state__icon">○</span>
+            <h3>No hay departamentos todavía</h3>
+            <p>Cuando registres uno, aparecerá en este directorio.</p>
+        </div>
+    </section>
+</main>
