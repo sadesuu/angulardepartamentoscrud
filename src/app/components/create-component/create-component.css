@@ -1,0 +1,115 @@
+ :host {
+    color: #243b53;
+    display: block;
+    min-height: calc(100vh - 76px);
+    padding: 3.5rem 1.25rem;
+}
+
+p {
+    color: #102a43;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -.05em;
+    margin: 0 auto 1.75rem;
+    max-width: 560px;
+    text-align: center;
+}
+
+form {
+    background: #fff;
+    border: 1px solid #e1e8ed;
+    border-radius: 20px;
+    box-shadow: 0 16px 40px rgba(16, 42, 67, .1);
+    margin: 0 auto;
+    max-width: 560px;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    position: relative;
+}
+
+form::before {
+    background: #f3a712;
+    border-radius: 20px 20px 0 0;
+    content: "";
+    height: 5px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+label {
+    color: #486581;
+    display: block;
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .04em;
+    margin: 1.1rem 0 .45rem;
+}
+
+label:first-of-type {
+    margin-top: 0;
+}
+
+.form-control {
+    background: #f7f9fa;
+    border: 1px solid #d9e2ec;
+    border-radius: 10px;
+    color: #102a43;
+    font-family: inherit;
+    font-size: .95rem;
+    min-height: 48px;
+    padding: .75rem .9rem;
+    transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
+    width: 100%;
+}
+
+.form-control:hover {
+    border-color: #9fb3c8;
+}
+
+.form-control:focus {
+    background: #fff;
+    border-color: #2f6690;
+    box-shadow: 0 0 0 4px rgba(47, 102, 144, .12);
+    outline: none;
+}
+
+button.btn {
+    background: #102a43;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-family: inherit;
+    font-size: .9rem;
+    font-weight: 800;
+    margin-top: 1.75rem;
+    min-height: 48px;
+    padding: .75rem 1.5rem;
+    transition: background-color .2s ease, box-shadow .2s ease, transform .2s ease;
+    width: 100%;
+}
+
+button.btn:hover {
+    background: #1d4568;
+    box-shadow: 0 8px 18px rgba(16, 42, 67, .2);
+    transform: translateY(-2px);
+}
+
+button.btn:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+    :host {
+        min-height: calc(100vh - 68px);
+        padding: 2.5rem 1rem;
+    }
+
+    form {
+        border-radius: 16px;
+        padding: 1.5rem;
+    }
+}

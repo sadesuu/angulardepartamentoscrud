@@ -276,6 +276,23 @@ h2 {
     border-color: #9fb3c8;
 }
 
+.action-button--details {
+    background: #2f6690;
+    border-color: #2f6690;
+    color: #fff;
+    text-decoration: none;
+}
+
+.action-button--details:hover {
+    background: #245273;
+    border-color: #245273;
+}
+
+.action-button:focus-visible {
+    outline: 3px solid rgba(47, 102, 144, .35);
+    outline-offset: 2px;
+}
+
 .action-button--delete {
     color: #c05640;
 }

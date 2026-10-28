@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Departamento } from '../models/departamento';
 import { environment } from '../../environments/environment.development';
@@ -13,4 +13,16 @@ export class ServiceDepartamento {
     let req = 'api/departamentos';
     return firstValueFrom(this._http.get<Departamento[]>(this.url + req));
   }
+
+  async createDepartamentAsync(departamento: Departamento): Promise<any>{
+    
+    let json = JSON.stringify(departamento)
+
+    let header = new HttpHeaders()
+//incluimos la key de content-type
+    header = header.set("content-type", "application/json")
+    let req = 'api/departamentos'
+    return firstValueFrom(this._http.post(this.url + req, json,{headers:header}));
+
+  } 
 }
